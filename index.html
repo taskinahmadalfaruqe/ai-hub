@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./picture/favicon.png" type="image/x-icon">
+    <title>AI HUB</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <header>
+        <div class="container text-center space-y-5">
+            <h1 class="text-5xl font-bold">AI Universe Hub</h1>
+            <button onclick="shortBTN()" class="btn btn-primary  text-white bg-orange-600 hover:bg-white border-[1px] hover:border-[1px] border-white hover:border-orange-600 hover:text-orange-600">short by data</button>
+        </div>
+    </header>
+    <main>
+        <div class="container py-10">
+            <div id="ai_container" class="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-5 justify-center items-start ">
+
+            </div>
+            
+            <!-- MODAL PART START  -->
+            <dialog id="my_modal" class="modal">
+            <form method="dialog" class="modal-box max-w-[90%]">
+                <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                <div class="fullModal py-10 grid grid-cols-1 md:grid-cols-2 gap-5 ">
+
+                    <!-- LEFT SIDE PART START  -->
+                    <div class="text border-2 rounded-lg border-black p-5">
+                         <!-- DESCRIPTION PART START  -->
+                        <div  id="modalDescription"  class="text-2xl font-semibold mb-5"></div>
+
+                         <!-- PRICING PART START  -->
+                        <div id="pricing" class="flex gap-5 justify-center items-center"></div>
+
+
+                        <div class="flex gap-5 mt-5 justify-between">
+                            <!-- FEATURES PART START  -->
+                            <div>
+                                <h2 class="mb-5 text-2xl font-semibold ml-2">Features</h2>
+                                <div id="modalFeatures"></div>
+                            </div>
+
+                            <!-- INTEGRATION PART START  -->
+                            <div>
+                                <h2 class="mb-5 text-2xl font-semibold ml-2">Integrations</h2>
+                                <div id="modalIntegrations"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT SIDE PART START  -->
+                    <div class="image border-2 rounded-lg border-black p-5">
+                        <div id="image" class="mx-auto">
+                            
+                        </div>
+                        <div id="question" class="flex gap-5 justify-between items-start">
+                            <div>
+                                <h2 class="text-2xl font-semibold my-5">Question</h2>
+                                <div  id="input"></div>
+                            </div>
+
+                            <div>
+                                <h2 class="text-2xl font-semibold my-5">Answer</h2>
+                                <div id="output"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            </dialog>
+            <!-- MODAL PART  END  -->
+
+            <div  class="text-center mx-auto mt-5">
+                <button id="showAll" onclick="buttonClicked()" class="btn btn-primary text-white bg-orange-600 hover:bg-white border-[1px] hover:border-[1px] border-white hover:border-orange-600 hover:text-orange-600 hidden">show all</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
