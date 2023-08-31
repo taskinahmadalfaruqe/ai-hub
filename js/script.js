@@ -47,8 +47,8 @@ const lodeData= (arrayOfData, isButtonClicked,isShortClicked)=>{
                     `<li class="list-decimal ml-3">${value}</li>`).join('')}
                 </ul>
                 <hr class="border-black my-5">
-                <h2 id="company" class="text-2xl font-bold">${singleAi.name}</h2>
-                <div id="date" class="font-medium text-base">${singleAi.published_in}</div>
+                <h2 id="company" class="text-2xl font-bold">${singleAi.name?`${singleAi.name}`:"No Data Found"}</h2>
+                <div id="date" class="font-medium text-base">${singleAi.published_in?`${singleAi.published_in}`:"No Data Found"}</div>
             </div>
         </div>
     `;
@@ -86,32 +86,33 @@ const loadModal=(singleResponseData)=>{
     modalDescription.innerText=`${singleResponseData.description}`;
 
     pricing.innerHTML=`
-        ${singleResponseData?.pricing?.map(value=>
-            `<div class="flex flex-col p-3 min-w-[100px] bg-red-100    rounded-lg text-center">
-                <h2 class="text-xl">${value.plan?`${value.plan}`:'NO DATA'}</h2>
-                <p class="text-lg font-medium mt-3">${value.price?`${value.price}`:'NO DATA'}</p>
+        ${singleResponseData?.pricing?`${singleResponseData.pricing.map(value=>
+            `<div class="flex flex-col p-3 lg:min-w-[100px] bg-red-100    rounded-lg text-center">
+                <h2 class="text-base lg:text-sm xl:text-base">${value.plan?`${value.plan}`:'NO DATA'}</h2>
+                <p class="text-base lg:text-sm xl:text-lg font-medium mt-3">${value.price?`${value.price}`:'NO DATA'}</p>
                 </div>
-            `).join('')
-        }`;
+            `).join('')}
+        `:"NO PRICE DATA FOUND"}
+    `;
 
+    
     let featuresOBJ =singleResponseData.features;
     for(let key in featuresOBJ){
         let p= document.createElement('li');
-        p.classList.add('ml-3')
+        p.classList.add('lg:ml-3')
         p.innerText=`${featuresOBJ[key].feature_name}`;
         modalFeatures.appendChild(p);
     };
 
     modalIntegrations.innerHTML=`
-    ${singleResponseData.integrations.map(value=>`
+    ${singleResponseData.integrations?`${singleResponseData.integrations.map(value=>`
         <li>${value}</li>
-    `).join('')}
-    `;
+    `).join('')}`:"No Integration"}`;
 
     image.innerHTML=`
-    <img src='${singleResponseData.image_link[0]}' alt="Ai Image" class="rounded-xl overflow-hidden border-[1px] min-h-[250px]">
+    <img src='${singleResponseData.image_link[0]}' alt="Ai Image" class="rounded-xl overflow-hidden border-[1px] min-h-[150px] lg:min-h-[250px]">
     `;
 
-    input.innerHTML=`${singleResponseData.input_output_examples.map(data=>`<h2 class="mb-6">${data.input}</h2>`).join('')}`;
-    output.innerHTML=`${singleResponseData.input_output_examples.map(data=>`<p class="mb-5">${data.output}</p>`).join('')}`;
+    input.innerHTML=`${singleResponseData.input_output_examples.map(data=>`<h2 class="mb-6">${data.input?`${data.input}`:"No Data Found"}</h2>`).join('')}`;
+    output.innerHTML=`${singleResponseData.input_output_examples.map(data=>`<p class="mb-5">${data.output?`${data.output}`:"No Data Found"}</p>`).join('')}`;
 };

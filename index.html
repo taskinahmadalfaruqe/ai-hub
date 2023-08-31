@@ -25,27 +25,27 @@
             <dialog id="my_modal" class="modal">
             <form method="dialog" class="modal-box max-w-[90%]">
                 <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-                <div class="fullModal py-10 grid grid-cols-1 md:grid-cols-2 gap-5 ">
+                <div class="fullModal py-10 grid grid-cols-1 lg:grid-cols-2 gap-5 ">
 
                     <!-- LEFT SIDE PART START  -->
                     <div class="text border-2 rounded-lg border-black p-5">
                          <!-- DESCRIPTION PART START  -->
-                        <div  id="modalDescription"  class="text-2xl font-semibold mb-5"></div>
+                        <div  id="modalDescription"  class=" text:sm lg:text-2xl font-semibold mb-5"></div>
 
                          <!-- PRICING PART START  -->
-                        <div id="pricing" class="flex gap-5 justify-center items-center"></div>
+                        <div id="pricing" class="flex gap-5 flex-col md:flex-row justify-center items-center"></div>
 
 
-                        <div class="flex gap-5 mt-5 justify-between">
+                        <div class="flex flex-col lg:flex-row gap-5 mt-5 justify-between">
                             <!-- FEATURES PART START  -->
                             <div>
-                                <h2 class="mb-5 text-2xl font-semibold ml-2">Features</h2>
+                                <h2 class="mb-5 text-2xl font-semibold">Features</h2>
                                 <div id="modalFeatures"></div>
                             </div>
 
                             <!-- INTEGRATION PART START  -->
                             <div>
-                                <h2 class="mb-5 text-2xl font-semibold ml-2">Integrations</h2>
+                                <h2 class="mb-5 text-2xl font-semibold">Integrations</h2>
                                 <div id="modalIntegrations"></div>
                             </div>
                         </div>
